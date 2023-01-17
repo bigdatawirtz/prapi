@@ -1,0 +1,94 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "16ef1756d6989ffc",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 340,
+        "y": 100,
+        "wires": [
+            [
+                "1c16238b51aaebd3"
+            ]
+        ]
+    },
+    {
+        "id": "1c16238b51aaebd3",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.sampleapis.com/wines/whites",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 100,
+        "wires": [
+            [
+                "d441d4943c3bf1fd"
+            ]
+        ]
+    },
+    {
+        "id": "b4226965bfec429b",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "d441d4943c3bf1fd",
+        "type": "json",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": true,
+        "x": 670,
+        "y": 100,
+        "wires": [
+            [
+                "b4226965bfec429b"
+            ]
+        ]
+    }
+]
